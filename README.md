@@ -25,3 +25,7 @@ Deverá criar um novo registro na tabela payment_methods o name_value deverá se
 # Usuários:
 { full_name: 'User 1' , email: 'user1@gmail.com' , password: '123123' , password_confirmation: '123123' , role: 0 , payment_method_id: 1 , expiration_date: 5 },
 { full_name: 'User 2' , email: 'user2@gmail.com' , password: '123123' , password_confirmation: '123123' , role: 1 , payment_method_id: 1 , expiration_date: 10 },
+
+# Autor:
+Mário Augusto Carvalho Lara Leite
+Telefone: +55 31 9.8421-4820
