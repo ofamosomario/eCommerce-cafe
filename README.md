@@ -19,5 +19,9 @@ Foi utilizado a gem whenever para realizar os cronjob. A configuração consta n
 # Testes na aplicação:
 Favor executar rspec no terminal.
 
-# Como adicionar um novo método de pagamento
+# Como adicionar um novo método de pagamento:
 Deverá criar um novo registro na tabela payment_methods o name_value deverá ser o mesmo nome que a classe de serviço opter, utilizando camelCase.
+
+# Usuários:
+{ full_name: 'User 1' , email: 'user1@gmail.com' , password: '123123' , password_confirmation: '123123' , role: 0 , payment_method_id: 1 , expiration_date: 5 },
+{ full_name: 'User 2' , email: 'user2@gmail.com' , password: '123123' , password_confirmation: '123123' , role: 1 , payment_method_id: 1 , expiration_date: 10 },
