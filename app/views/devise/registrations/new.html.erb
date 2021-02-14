@@ -1,0 +1,49 @@
+<br />
+<section class="page-section about-heading">
+  <div class="container">
+    <div class="about-heading-content">
+      <div class="row">
+        <div class="col-xl-9 col-lg-10 mx-auto">
+          <div class="bg-faded rounded p-5">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Cadastro:</span>
+            </h2>
+
+              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= f.error_notification %>
+
+                <div class="form-inputs">
+                  <%= f.input :full_name,
+                              required: true,
+                              label: 'Nome completo:'%>
+                  <%= f.input :email,
+                              required: true,
+                              autofocus: true,
+                              label: 'Email:',
+                              input_html: { autocomplete: "email" }%>
+                  <%= f.input :password,
+                              required: true,
+                              label: 'Senha:',
+                              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                              input_html: { autocomplete: "new-password" } %>
+                  <%= f.input :password_confirmation,
+                              required: true,
+                              label: 'Confirmação de senha:',
+                              input_html: { autocomplete: "new-password" } %>
+
+                  <%= f.association :payment_method, collection: PaymentMethod.order(:name), prompt: false, label: 'Método de pagamento:', value_method: :id %>
+
+                  <%= f.input :expiration_date , collection: 1..15, label: 'Dia de expiração:' , required: true %>
+                </div>
+
+                <div class="form-actions">
+                  <%= f.button :submit, "Cadastrar" , class: 'btn btn-primary' %>
+                </div>
+              <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

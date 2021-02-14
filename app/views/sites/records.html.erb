@@ -1,0 +1,41 @@
+<section class="page-section about-heading">
+  <div class="container">
+    <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="images/payments.jpg" alt="">
+    <div class="about-heading-content">
+      <div class="row">
+        <div class="col-xl-9 col-lg-10 mx-auto">
+          <div class="bg-faded rounded p-5">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-lower">Histórico de Compras</span>
+            </h2>
+
+              <% @records.each do | record | %>
+
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Produto</th>
+                      <th>Valor</th>
+                      <th>Data</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                      <tr>
+                        <td><%= record.product.title %></td>
+                        <td><%= record.product.value %></td>
+                        <td><%= record.created_at.strftime("%d-%m-%Y") %></td>
+                        <td><%= record.checked == true ? 'Faturado.' : 'Não faturado.' %></td>
+                      </tr>
+                  </tbody>
+                </table>
+
+              <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
